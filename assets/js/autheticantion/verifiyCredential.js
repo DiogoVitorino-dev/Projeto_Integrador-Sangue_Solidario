@@ -8,9 +8,9 @@ export function verifyEmail(email) {
         if (email) {
             // Verificar se há caracteres inapropriados no email
             const regexResult = RegExp(regexEmail).exec(email)
-            console.log(regexResult);
+            console.log(regexResult[0] === email);
 
-            if (regexResult === email) resolve()
+            if (regexResult[0] === email) resolve()
 
             else reject(new Error('Apenas letras minúsculas e maiúsculas, números e simbolos _ - . são permitidos'))
 
@@ -28,7 +28,7 @@ export function verifyPassword(password='') {
                 // Verificar se há caracteres inapropriados na Senha
                 const regexResult = RegExp(regexPassword).exec(password)
 
-                if (regexResult === password) resolve()
+                if (regexResult[0] === password) resolve()
 
                 else reject(new Error('Contém caractere(s) inapropriados'))
 

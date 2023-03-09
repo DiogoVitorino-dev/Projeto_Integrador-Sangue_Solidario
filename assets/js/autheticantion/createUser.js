@@ -10,9 +10,9 @@ export function CreateUserWithEmail(email,password) {
 
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          // login com sucesso
+          // Cadastro com sucesso
           const user = userCredential.user;
-          console.log(user)
+          return user
         })
         .catch((error) => {
           // Error
