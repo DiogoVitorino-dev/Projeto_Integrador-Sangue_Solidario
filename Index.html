@@ -1,14 +1,303 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <title>Nome do site</title>
-</head>
-<body>
-    
-    <script type="text/javascript" src="assets/js/main.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Rubik:wght@300;400&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <title>Nome do site</title>
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div class="p-0 container-fluid">
+                <div class="p-0 container">
+                    <div class="navBar">
+                        <img src="assets/img/icon/Logo.svg" alt="Banner" class="logo" />
+
+                        <nav class="nav-container">
+                            <a href="#" class="hv-home text-color-light">Home</a>
+                            <a href="#" class="hv-servico text-color-light">Serviços</a>
+                            <a href="#" class="hv-informacao text-color-light">Informações</a>
+                            <a href="#" class="hv-contato text-color-light">Contato</a>
+                            <div class="bg-hover"></div>
+                        </nav>
+                        <div class="btn-container">
+                            <button class="btn-cadastro">Cadastre-se</button>
+                            <button class="btn-login">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- HOME -->
+
+        <section id="home">
+            <div class="banner">
+                <div class="container">
+                    <div class="col-md-7">
+                        <div class="box-text">
+                            <h3 class="title-banner text-color-light">Agende sua doação!</h3>
+                            <p class="text-banner text-color-light">Faça sua parte, agende aqui sua doação. doar é um ato de amor e salva vidas, a cada doação você salva ate quatro pessoas. o ato de doar nao traz nenhum maleficio a sua saúde pois o seu corpo se auto organiza positivamente.</p>
+                            <button class="btn-banner">Agendar</button>
+                        </div>
+                        <div class="scroll-Down">
+                            <img src="assets/img/icon/scroll-down.svg" alt="Rolar para baixo" />
+                            <p class="text-color-light">Rolar para baixo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVIÇOS -->
+
+        <section id="servicos">
+            <div class="container">
+                <div class="row">
+                    <div class="p-0 col-sm-5">
+                        <div class="text-servico">
+                            <div class="line"></div>
+                            <h3 class="title">Veja os <span class="text-color-red">serviços</span> que podemos oferecer!</h3>
+                            <p class="text">Acompanhe os nossos serviços de forma rápida e pratica, para isso é só clicar em uma das opções ao lado.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-0 col-sm-7">
+                        <div class="cards-servico">
+                            <div class="p-0 row justify-content-end">
+                                <div class="p-3 col-sm-6 bg-color-red card">
+                                    <div class="box-interno">
+                                        <img src="assets/img/icon/icon-agendamento.svg" alt="icone de Calendario" class="icon-card" />
+                                        <h5 class="text-color-light">Agende sua doação</h5>
+
+                                        <p class="text-color-light">Agende aqui sua doação, sem problemas e com as facilidades que dispomos no site.</p>
+                                    </div>
+                                </div>
+
+                                <div class="p-3 col-sm-6 card">
+                                    <div class="box-interno">
+                                        <img src="assets/img/icon/icon-info.svg" alt="icone de Informação" class="icon-card" />
+                                        <h5 class="text-color-dark">Informe-se</h5>
+
+                                        <p class="text-color-dark">Tem duvidas? fale conosco através do e-mail ou telefoneque que ajudamos você.</p>
+                                    </div>
+                                </div>
+
+                                <div class="w-100"></div>
+
+                                <div class="p-3 col-sm-6 card">
+                                    <div class="box-interno">
+                                        <img src="assets/img/icon/icon-bs.svg" alt="Icone do Banco de Sangue" class="icon-card" />
+                                        <h5 class="text-color-dark">Banco de Sangue</h5>
+
+                                        <p class="text-color-dark">Veja na seção banco de sangue o que precisamos para ser doado e o que ofertamos aos receptores.</p>
+                                    </div>
+                                </div>
+
+                                <div class="p-3 col-sm-6 card">
+                                    <div class="box-interno">
+                                        <img src="assets/img/icon/icon-feedback.svg" alt="Icone de Feedback" class="icon-card" />
+                                        <h5 class="text-color-dark">Envie seu feedback</h5>
+
+                                        <p class="text-color-dark">Gostou dos nossos serviços? tem alguma sugestão ou reclamação por favor nos envie sua opinião.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO -->
+
+        <section class="banner-video">
+            <div class="p-0 container">
+                <div class="box-video-Info">
+                    <div class="box-video">
+                        <img src="assets/img/video-cover.svg" id="video" />
+                    </div>
+
+                    <div class="text-video">
+                        <div class="line-v"></div>
+                        <h5 class="title">Assista nosso <span class="text-color-red">vídeo!</span></h5>
+                        <p class="text">Quer entender mais sobre esse mundo da doação? Assista nosso vídeo para ficar por dentro das novidades.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFORMAÇÕES -->
+
+        <section class="info-sangue">
+            <div class="container">
+                <div class="box-textS">
+                    <div class="box-info">
+                        <div class="lineIn1 bg-color-red"></div>
+                        <h2 class="title text-color-red">Por que doar sangue ?</h2>
+                        <p class="text text-color-dark espace-info">A doação é um ato altruísta e de solidariedade, a doação de sangue é um ato que salva vidas. Uma única doação pode ajudar a salvar até quatro vidas. Esse é um gesto de amor que pode gerar muitos sorrisos.</p>
+
+                        <h2 class="title text-color-red">Sou receptor, como eu faço?</h2>
+                        <p class="text text-color-dark espace-info">cadastre-se e solicite a sua doação, se for um receptor periódico favor especificar sua condição e tipo sanguíneo no cadastro, para que possamos encontrar doadores.</p>
+
+                        <h2 class="title text-color-red">Como fazer a doação?</h2>
+                        <p class="text text-color-dark">Se cadastrar com dias e horários definidos no site que comunicara o hemocentro de sua região para facilitar o processo.</p>
+                        <div class="lineIn2 bg-color-red"></div>
+                    </div>
+                    <div class="box-svg-info">
+                        <img src="assets/img/svg-home.svg" alt="Ilustração de Proficionais de Saúde" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GAELRIA -->
+
+        <section class="galeria">
+            <div class="container">
+                <div class="p-0 row">
+                    <img src="assets/img/img1.png" alt="" class="img-galeria col-sm-5 p-0" />
+                    <img src="assets/img/img2.png" alt="" class="img-galeria col-sm-3 p-0" />
+                    <img src="assets/img/img3.png" alt="" class="img-galeria col-sm-4 p-0" />
+                </div>
+                <div class="p-0 row">
+                    <img src="assets/img/img4.png" alt="" class="img-galeria col-sm-4 p-0" />
+                    <img src="assets/img/img5.png" alt="" class="img-galeria col-sm-3 p-0" />
+                    <img src="assets/img/img6.png" alt="" class="img-galeria col-sm-5 p-0" />
+                </div>
+            </div>
+        </section>
+
+        <!-- AVALIAÇÃO -->
+
+        <section class="avaliacao">
+            <div class="container-fluid">
+                <h5 class="title text-color-dark">O que nossos usuários estão falando?</h5>
+                <div class="container">
+                    <div class="card-avaliacao col-sm-3 space-card">
+                        <img src="assets/img/perfil-1.svg" alt="Imagem do Usúario" class="Perfil-img" />
+                        <h6 class="text-color-dark">Alexandre Medeiro</h6>
+                        <p class="text text-color-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ipsum voluptatibus repellendus atque? Quia veritatis, amet, eligendi qui error iure natus facere cupiditate voluptate laborum vitae labore quidem iste iusto?</p>
+                    </div>
+
+                    <div class="card-avaliacao col-sm-3 offset-1 bg-color-red">
+                        <img src="assets/img/perfil-2.svg" alt="Imagem do Usúario" class="Perfil-img" />
+                        <h6 class="text-color-light">Malena da Silva</h6>
+                        <p class="text text-color-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam eveniet, saepe praesentium nesciunt quis vero cum corrupti aperiam molestiae recusandae quaerat ipsum ut odio veniam tempora tempore in voluptas aut.</p>
+                    </div>
+
+                    <div class="card-avaliacao col-sm-3 offset-1 space-card">
+                        <img src="assets/img/perfil-3.svg" alt="Imagem do Usúario" class="Perfil-img" />
+                        <h6 class="text-color-dark">Jailson Terceiro</h6>
+                        <p class="text text-color-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eos eveniet molestiae, excepturi tempore ipsum magnam ut vitae similique consequatur animi quos praesentium, officiis dolorum quaerat exercitationem illo possimus. Sequi?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOGO MARCAS -->
+
+        <section class="box-logo-hemocentro">
+            <div class="p-md-0 container">
+                <div class="line-logos bg-color-red"></div>
+                <div class="box-logo">
+                    <img src="assets/img/logo-hemope.svg" alt="Logo do Hemope" />
+                    <img src="assets/img/logo-ihene.svg" alt="Logo do IHENE" />
+                    <img src="assets/img/logo-gsh.svg" alt="Logo do Grupo GSH Hemocentro" />
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+
+        <section class="bg-contato">
+            <div class="container">
+                <div class="box-contato">
+                    <h6 class="title-form text-color-dark">Contate-nos</h6>
+                    <form class="modal-form">
+                        <div class="box-info-contato">
+                            <div class="box-form">
+                                <label for="nome"></label>
+                                <input type="text" id="nome" name="Nome" placeholder="Nome" required/>
+
+                                <label for="email"></label>
+                                <input type="text" id="email" name="Email" placeholder="E-mail" required/>
+                            </div>
+
+                            <div class="box-form">
+                                <label for="telefone"></label>
+                                <input type="tel" id="telefone" name="Telefone" placeholder="(DDD) Telefone" required/>
+                            </div>
+                        </div>
+                        <div class="box-form">
+                            <label for="msg"></label>
+                            <textarea id="msg" placeholder="Digite uma mensagem (Opicional)"></textarea>
+                        </div>
+                    </form>
+                    <button class="btn-contato bg-color-red text-color-light">Enviar</button>
+                </div>
+
+                <div class="box-detalhe">
+                    <h6 class="title-form text-color-dark">Detalhes</h6>
+                    <p class="text">Contate-nos através do e-mail ou número.</p>
+                    <div class="box-det-contato">
+                        <div class="email-det">
+                           <img src="assets/img/icon/email.svg" alt="Icone de Email"> 
+                           <p class="text-color-dark">Banco.de.sangue@gmail.com</p>
+                        </div>
+                        <div class="telefone-det">
+                            <img src="assets/img/icon/telephone.svg" alt="Icone de Email"> 
+                            <p class="text-color-dark">(81) 00000-0000</p>
+                        </div>
+                    </div>
+                    <div class="box-feedback">
+                        <label for="feedback"></label>
+                        <input id="feedback" name="feedback" placeholder="Escreva seu feedback...">
+                        <button class="btn-feed bg-color-red text-color-light">Enviar</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+
+        <footer>
+            <div class="bg-footer bg-color-red">
+                <div class="p-md-0 container">
+                    <div class="box-footer">
+                        <div class="footer-sobre">
+                            <h6 class="title-footer text-color-light">Sobre</h6>
+                            <p class="text-footer text-color-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel gravida felis. Nunc dapibus quam dapibus quam viverra varius.</p>
+                        </div>
+
+                        <div class="footer-servicos">
+                            <h6 class="title-footer text-color-light">Serviços</h6>
+                            <a href="#">Agendamento</a>
+                            <a href="#">Informações</a>
+                            <a href="#">Galeria</a>
+                            <a href="#">Avaliações</a>
+                            <a href="#">Banco de sangue</a>
+                        </div>
+
+                        <div class="seguir">
+                            <h6 class="title-footer text-color-light">Redes Sociais</h6>
+                            <div class="redes-sociais">
+                                <img src="assets/img/icon/instagram.svg" alt="Instagram" />
+                                <img src="assets/img/icon/facebook.svg" alt="Facebook" />
+                                <img src="assets/img/icon/twitter.svg" alt="Twitter" />
+                                <img src="assets/img/icon/linkedin.svg" alt="Linkedin" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="assets/js/main.js"></script>
+    </body>
 </html>
