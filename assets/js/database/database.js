@@ -43,7 +43,7 @@ class UserDatabase{
         });
     }
 
-    async writeBloodDonation(userId,schedulingDatetime,location,date) {
+    async writeBloodDonation(userId, time, createdDatetime,location,date) {
         return new Promise((resolve,reject) => {
             if (userId) {
                 const bloodDonationRef = ref(this.database,
@@ -55,7 +55,8 @@ class UserDatabase{
                 //Adiciona os dados ao item de lista e envia ao Banco de dados
                 //retorna true caso enviado com sucesso
                 set(newBloodDonation, {
-                    schedulingDatetime,
+                    createdDatetime,
+                    time,
                     location,
                     date,
                 })

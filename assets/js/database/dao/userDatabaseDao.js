@@ -64,12 +64,14 @@ class UserDatabaseDao {
 
     async writeBloodDonationDao(
         userId,
-        schedulingDatetime,
+        time,
+        createdDatetime,
         location,
         date) {
         return new UserDatabase(this.firebaseReference).writeBloodDonation(
             userId,
-            schedulingDatetime,
+            time,
+            createdDatetime,
             location,
             date)
         .catch(error => reject(error));
@@ -89,7 +91,8 @@ class UserDatabaseDao {
                             itemID,
                             queryResult[itemID].date,
                             queryResult[itemID].location,
-                            queryResult[itemID].schedulingDatetime
+                            queryResult[itemID].createdDatetime,
+                            queryResult[itemID].time
                         )
                     );
                 });
