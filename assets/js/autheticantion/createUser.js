@@ -2,27 +2,31 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { verifyEmail, verifyPassword } from "./verifiyCredential";
 
 export function CreateUserWithEmail(email,password) {
-  const auth = getAuth();
-
   // Verificar regras de formulação para email e senha
   return Promise.all([verifyEmail(email),verifyPassword(password)])
-    .then(() => {
 
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // Cadastro com sucesso
-          const user = userCredential.user;
-          return user
+    .then(() => new Promise((resolve,reject) => {
+
+      createUserWithEmailAndPassword(getAuth(), email, password)
+        .then(userCredential => {
+          resolve(userCredential) // Cadastro com sucesso
         })
-        .catch((error) => {
+        .catch(error => {
           // Error
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(errorCode)
-          console.log(errorMessage)
-        });
+          switch (error.code) {
+            case "auth/invalid-email":
+                reject(new Error("Email não e válido"))
+                break;
 
-      }).catch(error => {
-        console.log(error)
+            case "auth/email-already-in-use":
+                reject(new Error("Já existe uma conta registrada neste email!"))
+                break;
+
+            default:
+                reject(new Error("Ocorreu um erro, tente novamente mais tarde"))
+                break;
+          }
+        })
       })
+    )
 }
