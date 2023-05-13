@@ -74,7 +74,7 @@ class UserDatabaseDao {
             createdDatetime,
             location,
             date)
-        .catch(error => console.log(error));
+        .catch(error => reject(error));
     }
 
     async readBloodDonationDao(userId) {

@@ -1,11 +1,9 @@
-import { getAuth, inMemoryPersistence, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 export default function LoginUserWithEmail(email,password) {
     return new Promise((resolve, reject) => {
-        let auth = getAuth()
-        auth.setPersistence(inMemoryPersistence)
 
-        signInWithEmailAndPassword(auth, email, password)
+        signInWithEmailAndPassword(getAuth(), email, password)
             .then((userCredential) => {
                 // Login com sucesso
                 resolve(userCredential.user);
