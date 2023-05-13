@@ -44,7 +44,6 @@
     color: #9b0000;
 }
 
-
 .logo {
     height: 9vh;
     margin-right: 40px;
@@ -79,7 +78,7 @@
     font-weight: 300;
 }
 
-.input-cpf,
+.input-email,
 .input-password {
     height: 40px;
     width: 100%;
@@ -113,6 +112,7 @@
     width: 15px;
     height: 15px;
     margin-right: 5px;
+    cursor: pointer;
 }
 
 .link-cadastro {
@@ -143,8 +143,14 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: #8a0000;
+    transition: 0.3s;
+}
+
 button:active {
     transform: scale(0.95);
+    transition: 0.3s;
 }
 
 .svg {
