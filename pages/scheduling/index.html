@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Rubik:wght@300;400&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="../../assets/css/bootstrap-grid.min.css" />
+        <link rel="stylesheet" href="../../assets/css/schedulingStyle.css" />
+        <link rel="stylesheet" href="../../assets/css/main.css" />
+        <title>Agendamento</title>
+    </head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="p-0 container-fluid">
+            <div class="p-0 container">
+                <div class="navBar">
+                    <img src="../../assets/img/icon/Logo.svg" alt="Banner" class="logo" />
+
+                    <nav class="nav-container">
+                        <a href="#home" class="hv-home text-color-light">Home</a>
+                        <a href="#servicos" class="hv-servico text-color-light">Serviços</a>
+                        <a href="#informacao" class="hv-informacao text-color-light">Informações</a>
+                        <a href="#contato" class="hv-contato text-color-light">Contato</a>
+                        <div class="bg-hover"></div>
+                    </nav>
+                    <div class="btn-container">
+                        <button class="btn-cadastro">Cadastre-se</button>
+                        <button class="btn-login">
+                            <a href="login.html">Login</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="scheduling" class="container-md">
+        <article class="container-md">
+            <div class="calendarTitle">
+                <div></div>
+                <span>Escolha uma data para realizar sua doação</span>
+            </div>
+
+            <div id="calendarContainer">
+
+                <div id="calendar" class="container-md">
+                    <div class="calendar-header">
+
+                        <div>
+                            <button class="btn" id="prevMonthBtn">❮</button>
+                        </div>
+
+                        <div class="calendar-text">
+                            <p id="month-text"></p>
+                            <p id="year-text"></p>
+                        </div>
+
+                        <div>
+                            <button class="btn" id="nextMonthBtn">❯</button>
+                        </div>
+
+                    </div>
+
+                    <ul class="container-week-day">
+                        <li class="week-day">D</li>
+                        <li class="week-day">S</li>
+                        <li class="week-day">T</li>
+                        <li class="week-day">Q</li>
+                        <li class="week-day">Q</li>
+                        <li class="week-day">S</li>
+                        <li class="week-day">S</li>
+                    </ul>
+
+                    <div id="month">
+
+                    </div>
+
+                </div>
+
+                <div id="notice" class="container-md">
+                    <div class="notice-Title">
+                        <span><strong>Avisos</strong></span>
+                    </div>
+                    <div class="billboard">
+                        <ul class="adviceList">
+
+                            <li class="adviceItemList">
+                                <div class="adviceItemList-title">
+                                    <span>Importante!!</span>
+                                </div>
+                                <div class="adviceItemList-content">
+                                    <div class="adviceItemList-info">
+                                        <p>
+                                            Sua doação só poderá ser efetivada mediante a ausência de qualquer impedimento. Essa análise será realizada pelo Banco de sangue no dia e horário agendados.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="adviceItemList">
+                                <div class="adviceItemList-title">
+                                    <span>Atenção Doador!!!</span>
+                                </div>
+                                <div class="adviceItemList-content">
+                                    <div class="adviceItemList-info">
+                                        <p>
+                                            FAVOR CHEGAR COM 15 MINUTOS DE ANTECEDÊNCIA AO HORÁRIO AGENDADO
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="adviceItemList">
+                                <div class="adviceItemList-title">
+                                    <span>Não sabe como doar?</span>
+                                </div>
+                                <div class="adviceItemList-content">
+                                    <div class="adviceItemList-info">
+                                        <p>
+                                            Clique no botão ao lado para mais informações.
+                                        </p>
+                                    </div>
+                                    <div class="adviceItemList-infolink">
+                                        <button ><a href="#">Acessar</a></button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </article>
+
+        <article id="schedulingOptions" class="container-md">
+            <div class="schedulingOptions-content">
+                    <select id="selectLocation" class="schedulingOptions-select form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option selected value="">Selecione um Local *</option>
+                    </select>
+
+                    <select id="selectTime" class="schedulingOptions-select form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option selected value="">Selecione um Horário *</option>
+                    </select>
+            </div>
+
+            <div class="schedulingOptions-endSignupContainer">
+                   <div class="schedulingOptions-endSignup container-md">
+                        <div class="schedulingOptions-endSignup-advice">
+                            <p>
+                                Lembre-se de levar o comprovante ou documento com foto
+                            </p>
+                        </div>
+                        <div class="schedulingOptions-endSignup-button">
+                            <button id="doneButton">
+                                <span>Finalizar Agendamento</span>
+                            </button>
+                        </div>
+                   </div>
+            </div>
+        </article>
+
+    </section>
+
+    <script src="../../dist/calendar.bundle.js"></script>
+    <script src="../../dist/scheduling.bundle.js"></script>
+    <script src="../../dist/schedulingPageScript.bundle.js"></script>
+</body>
+</html>
