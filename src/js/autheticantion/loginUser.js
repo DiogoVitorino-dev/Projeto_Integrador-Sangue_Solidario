@@ -10,16 +10,23 @@ export default function LoginUserWithEmail(email,password) {
                 // Login com sucesso
                 resolve(userCredential.user);
             })
-            .catch((error) => {
+            .catch(error => {
                 // Error
-                console.log(error.code);
                 switch (error.code) {
                     case "auth/user-not-found":
                         reject(new Error("Não existe uma conta registrada nesse email"))
                         break;
 
+                    case "auth/invalid-email":
+                        reject(new Error("Email ou senha incorreta. Digite o email e a senha corretas e tente novamente."))
+                        break;
+
                     case "auth/wrong-password":
-                        reject(new Error("Senha incorreta, tente novamente."))
+                        reject(new Error("Email ou senha incorreta. Digite o email e a senha corretas e tente novamente."))
+                        break;
+
+                    case "auth/too-many-requests":
+                        reject(new Error("Muitas tentativas incorretas, por favor, tente novamente mais tarde"))
                         break;
 
                     default:

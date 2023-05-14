@@ -18,11 +18,10 @@ function getFormValues() {
 
 function disabledButton(disable) {
     let btn = document.getElementById('login-btn')
+    console.log(btn.disabled);
 
-    if (disable)
-        btn.disabled = true
-    else
-        btn.disable = false
+    if (disable) btn.disabled = true
+    else btn.disabled = false
 }
 
 function send() {
@@ -37,14 +36,10 @@ function send() {
                 window.location.href = "../../../../index.html"
             }
 
-        }).catch(error => {
-            disabledButton(false)
-            alert(error.code)
-            alert(error.message)
-        })
-    else
-        disabledButton(false)
+        }).catch(error => alert(error.message))
+
+    disabledButton(false)
 }
 
 document.getElementById('login-btn').addEventListener('click',send);
-const {firebaseReference} = InitializeFirebase()
+InitializeFirebase()
