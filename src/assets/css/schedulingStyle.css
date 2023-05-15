@@ -11,9 +11,9 @@ ul {
     margin-bottom: 20px;
     height: 420px;
     border-width: 1px;
-    border-color: black;
+    border-color: rgba(0, 0, 0, 0.5);
     border-style: solid;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .notice-Title {
@@ -107,7 +107,7 @@ ul {
 }
 
 .schedulingOptions-select{
-    max-width: 300px;
+    width: 300px;
     padding: 10px 5px;
     border-radius: 5px;
     border-color: black;
@@ -185,6 +185,10 @@ ul {
     .schedulingOptions-endSignupContainer{
         width: 100%;
     }
+
+    .schedulingOptions-select{
+        width: 100%;
+    }
 }
 
 #calendarContainer{
@@ -195,7 +199,8 @@ ul {
     display: flex;
     width: 50%;
     padding: 10px 12px;
-    margin-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     flex: 1;
 }
 
@@ -224,15 +229,18 @@ ul {
         order: 1;
     }
 
+    .calendarTitle{
+        width: 90%;
+    }
+
 }
 
 /* Calendario */
 
 #calendar {
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     height: 420px;
-    margin: 0 10px;
     margin-right: 20px;
     border-width: 1px;
     border-color: rgba(0, 0, 0, 0.5);
