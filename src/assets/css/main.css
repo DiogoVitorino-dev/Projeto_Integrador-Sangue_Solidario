@@ -79,26 +79,6 @@ body {
         left: 0;
         background-color: rgba(155, 0, 0, 0.6);
     }
-    
-    /* PERFIL */
-    .perfil-container {
-        display: none;
-    }
-
-    .perfil-container {
-        cursor: pointer;
-    }
-
-    .perfil-container:active{
-        transform: scale(0.95);
-    }
-
-    .perfil-container-mob {
-        position: relative;
-        top: -320px;
-        display: block;
-        cursor: pointer;
-    }
 
     /* PERFIL */
     .perfil-container {
