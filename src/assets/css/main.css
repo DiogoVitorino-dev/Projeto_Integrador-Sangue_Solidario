@@ -385,7 +385,7 @@ body {
         cursor: pointer;
     }
 
-    .btn-banner a{
+    .btn-banner span{
         padding: 10px 40px 10px 40px;
         color: #9b0000;
         text-decoration: none;
