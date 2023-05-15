@@ -16,6 +16,22 @@
     align-items: center;
 }
 
+.btn-voltar-mob {
+    position: absolute;
+    top: 40px;
+    left: 25px;
+}
+
+.btn-voltar-mob a {
+    background-color: #9b0000;
+    color: #f5f5f5;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 7px;
+    padding: 10px 20px;
+}
+
 .nav-container {
     height: 40px;
     background-color: rgba(245, 245, 245, 0.3);
@@ -56,7 +72,7 @@
 
 .login {
     height: 100vh;
-    width: 40%;
+    width: 100%;
     min-width: 400px;
     background: linear-gradient(180deg, #e9eaec 0%, rgba(233, 234, 236, 0.5) 19.19%, rgba(155, 0, 0, 0.4) 100%);
     display: flex;
@@ -75,6 +91,7 @@
     background-repeat: no-repeat;
     height: 100vh;
     width: 60%;
+    display: none;
 }
 
 .box-title > p {
@@ -177,4 +194,18 @@ button:active {
     font-family: "Rubik", sans-serif;
     font-size: 13px;
     color: #1e1e1e;
+}
+
+@media screen and (min-width: 992px) {
+    .background-login {
+        display: block;
+    }
+
+    .login  {
+        width: 40%;
+    }
+
+    .btn-voltar-mob {
+        display: none;
+    }
 }
