@@ -14,7 +14,7 @@ class User{
     constructor(
         userId,
         fullName,
-        idNumber,
+        cpf,
         email,
         telNumber,
         birthdayDate,
@@ -24,7 +24,7 @@ class User{
         ) {
         this.userId = userId;
         this.fullName = fullName;
-        this.cpf = idNumber;
+        this.cpf = cpf;
         this.email = email;
         this.telNumber = telNumber;
         this.birthdayDate = birthdayDate;
