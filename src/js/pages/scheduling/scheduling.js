@@ -17,7 +17,7 @@ function sendToDatabase(date, location, time, currentDateTime) {
                 currentDateTime,
                 location,
                 date
-            ).then(() => window.location.href = "../../../../index.html")
+            ).then(() => window.location.href = "index.html")
         })
     }
 }
