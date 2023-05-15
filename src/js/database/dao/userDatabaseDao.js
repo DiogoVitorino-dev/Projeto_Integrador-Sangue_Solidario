@@ -33,7 +33,7 @@ class UserDatabaseDao {
             genre,
             rhFactor,
             bloodType
-        )
+        ).catch(error => console.log(error))
 
     };
 
@@ -58,7 +58,7 @@ class UserDatabaseDao {
                 );
 
             })
-            .catch(error => reject(error));
+            .catch(error => console.log(error))
         });
     }
 
@@ -98,12 +98,14 @@ class UserDatabaseDao {
                 });
                 resolve(list);
 
-            }).catch(error => reject(error));
+            })
+            .catch(error => console.log(error));
         });
     }
 
     async removeBloodDonationDao(userId,itemID){
         return new UserDatabase(this.firebaseReference).removeBloodDonation(userId,itemID)
+        .catch(error => console.log(error))
     }
 }
 

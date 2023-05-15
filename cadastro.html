@@ -57,20 +57,20 @@
                         </label>
 
                         <select class="input" name="FatorRH" id="FatorRH">
-                            <option selected disabled>Fator RH</option>
+                            <option selected value="">Fator RH</option>
                             <option value="p">Rh positivo (Rh+)</option>
                             <option value="txt">Rh negativo (Rh-)</option>
                         </select>
 
                         <div class="box-input2">
                             <select class="inputP1" name="Genero" id="genero">
-                                <option selected disabled>Gênero</option>
+                                <option selected value="">Gênero</option>
                                 <option value="Masculino">Masculino</option>
                                 <option value="Feminino">Feminino</option>
                                 <option value="Outro">Outro</option>
                             </select>
                             <select class="inputP2" name="tipoSanguineo" id="tipoSanguineo">
-                                <option selected disabled>Tipo Sanguíneo</option>
+                                <option selected value="">Tipo Sanguíneo</option>
                                 <option value="A">A</option>
                                 <option value="B">B</option>
                                 <option value="AB">AB</option>
@@ -89,10 +89,10 @@
                         </div>
                     </form>
                     <div class="check">
-                        <input class="checkbox" type="checkbox" id="Temos" name="Temos" />
+                        <input class="checkbox" type="checkbox" id="Termos" name="Termos" />
                         <label class="text" for="check">Concordo com todos os termos.?</label>
                     </div>
-                    <button type="submit">Finalizar cadastro</button>
+                    <button id="doneBtn" type="submit">Finalizar cadastro</button>
 
                     <div class="socialConect">
                         <div>
@@ -112,5 +112,6 @@
                 </div>
             </div>
         </section>
+        <script type="text/javascript" src="dist/cadastro.bundle.js"></script>
     </body>
 </html>

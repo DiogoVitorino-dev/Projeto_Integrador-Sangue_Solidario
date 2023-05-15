@@ -9,7 +9,7 @@ export function CreateUserWithEmail(email,password) {
 
       createUserWithEmailAndPassword(getAuth(), email, password)
         .then(userCredential => {
-          resolve(userCredential) // Cadastro com sucesso
+          resolve(userCredential.user) // Cadastro com sucesso
         })
         .catch(error => {
           // Error

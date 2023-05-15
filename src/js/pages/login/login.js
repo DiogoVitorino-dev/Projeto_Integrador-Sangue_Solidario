@@ -1,4 +1,5 @@
 import LoginUserWithEmail from "../../autheticantion/loginUser";
+import UserDatabaseDao from "../../database/dao/userDatabaseDao";
 import InitializeFirebase from "../../firebase/initFirebase";
 
 
@@ -18,7 +19,6 @@ function getFormValues() {
 
 function disabledButton(disable) {
     let btn = document.getElementById('login-btn')
-    console.log(btn.disabled);
 
     if (disable) btn.disabled = true
     else btn.disabled = false
@@ -30,11 +30,13 @@ function send() {
 
     if (email && password)
         LoginUserWithEmail(email,password).then(result => {
-            if (result) {
-                sessionStorage.setItem("user",JSON.stringify(result))
+
+            new UserDatabaseDao(firebaseReference).readUserDataDao(result.uid)
+            .then(user => {
+                sessionStorage.setItem("user",JSON.stringify(user))
                 sessionStorage.setItem("pass",password)
-                window.location.href = "../../../../index.html"
-            }
+                window.location.href = "index.html"
+            })
 
         }).catch(error => alert(error.message))
 
@@ -42,4 +44,4 @@ function send() {
 }
 
 document.getElementById('login-btn').addEventListener('click',send);
-InitializeFirebase()
+const {firebaseReference} = InitializeFirebase()
