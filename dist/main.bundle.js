@@ -1,0 +1,1 @@
+(()=>{document.getElementById("btnAgendar").addEventListener("click",(function(){window.location.href=e&&t?"../../../../scheduling.html":"../../../../login.html"}));const e=JSON.parse(sessionStorage.getItem("user")),t=sessionStorage.getItem("pass")})();
