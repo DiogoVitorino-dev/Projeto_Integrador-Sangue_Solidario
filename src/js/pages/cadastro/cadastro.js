@@ -151,7 +151,7 @@ function createAccount() {
     })).then(result => {
         sessionStorage.setItem("user",JSON.stringify(result.user))
         sessionStorage.setItem("pass",result.password)
-        window.location.href = "index.html"
+        window.location.href = "homeUser.html"
 
     }).catch(error => createAlert(error.message))
 }

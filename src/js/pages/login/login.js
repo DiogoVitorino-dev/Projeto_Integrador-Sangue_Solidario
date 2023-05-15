@@ -35,7 +35,7 @@ function send() {
             .then(user => {
                 sessionStorage.setItem("user",JSON.stringify(user))
                 sessionStorage.setItem("pass",password)
-                window.location.href = "index.html"
+                window.location.href = "homeUser.html"
             })
 
         }).catch(error => alert(error.message))
