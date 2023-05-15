@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="src/assets/img/icon/favicon.ico" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Rubik:wght@300;400&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="src/assets/css/bootstrap-grid.min.css" />
+        <link rel="stylesheet" href="src/assets/css/infoStyle.css" />
+        <title>Informações</title>
+    </head>
+
+    <body>
+        <div class="overlay toggle-menu"></div>
+
+        <!-- HEADER -->
+        <header>
+            <div class="p-0 container-fluid">
+                <div class="p-0 container">
+                    <div class="navBar">
+                        <img src="src/assets/img/icon/Logo.svg" alt="Banner" class="logo" />
+                        <nav class="nav-container">
+                            <a href="Index.html">Home</a>
+                            <a href="Index.html">Serviços</a>
+                            <a href="Index.html">Informações</a>
+                            <a href="Index.html">Contato</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Menu Mobile -->
+        <button class="btn-menu-mob toggle-menu">
+            <ion-icon name="menu-outline"></ion-icon>
+        </button>
+
+        <nav class="navBar-mob menu-is-close">
+            <a href="Index.html" class="hv-home text-color-light">Home</a>
+            <a href="Index.html" class="hv-servico text-color-light">Serviços</a>
+            <a href="Index.html" class="hv-informacao text-color-light">Informações</a>
+            <a href="Index.html" class="hv-contato text-color-light">Contato</a>
+            <div class="bg-hover"></div>
+        </nav>
+
+        <main>
+            <div class="container-info">
+                <div class="imagem">
+                    <img src="src/assets/img/bg-info.svg" alt="banner com um texto escrito princípios da doação" />
+                    <div class="texto">Princípios da doação</div>
+                </div>
+
+                <div class="buttons">
+                    <!-- Botão 1 -->
+                    <button class="btn" onclick="mostrarConteudo(1)">Voluntariedade</button>
+
+                    <!-- Botão 3 -->
+                    <button class="btn" onclick="mostrarConteudo(2)">Gratuidade</button>
+
+                    <!-- Botão 4 -->
+                    <button class="btn" onclick="mostrarConteudo(3)">Critérios</button>
+
+                    <!-- Botão 5 -->
+                    <button class="btn" onclick="mostrarConteudo(4)">Segurança</button>
+
+                    <!-- Botão 6 -->
+                    <button class="btn" onclick="mostrarConteudo(5)">Solidariedade</button>
+                </div>
+
+                <div class="texts">
+                    <div id="conteudo1" class="content">
+                        <p>
+                            Quando doamos sangue de forma voluntária, estamos fazendo um ato de amor e solidariedade, sem esperar nada em troca. É importante fazer isso sem pressão ou incentivo externo, porque isso garante que as doações sejam feitas com responsabilidade e qualidade. Quando doamos sangue voluntariamente, somos mais cuidadosos com nossas informações médicas, o que ajuda a manter a segurança do doador e do receptor. Portanto, se você puder doar sangue de forma voluntária, isso
+                            pode salvar vidas e fazer a diferença.
+                        </p>
+                    </div>
+
+                    <div id="conteudo2" class="content">
+                        <p>
+                            Doar sangue é um ato que ajuda a salvar vidas e deve ser gratuito. Isso significa que não é preciso pagar para doar sangue. Isso é importante porque permite que todas as pessoas possam ajudar, independentemente de sua situação financeira. A gratuidade também garante que as doações sejam feitas por motivos altruístas, sem nenhum interesse financeiro. Isso ajuda a manter a segurança do doador e do receptor, pois as informações médicas são fornecidas com sinceridade e
+                            transparência.
+                        </p>
+                    </div>
+
+                    <div id="conteudo3" class="content">
+                        <p>
+                            Os critérios para doação de sangue incluem: peso mínimo de 50 kg, idade mínima de 18 anos (podendo variar de acordo com o país/região), boa saúde geral, pressão arterial dentro de um intervalo saudável, nível adequado de hemoglobina, não ter recebido algumas vacinas recentemente, informar quaisquer medicamentos que estejam tomando, informar o histórico sexual e médico relevante, e evitar certos estilos de vida, como o uso de drogas ilegais ou práticas de tatuagem
+                            recentes. Para mais informações clique em: <a class="link" href="https://www.hemope.pe.gov.br/queroserdoador-criterios">Hemope.</a>
+                        </p>
+                    </div>
+
+                    <div id="conteudo4" class="content">
+                        <p>A doação de sangue é segura porque existem muitas precauções e medidas de segurança que são tomadas antes, durante e após a doação, incluindo triagem médica, testes de doenças transmissíveis, uso de equipamentos estéreis descartáveis e procedimentos rigorosos de processamento e armazenamento do sangue doado.</p>
+                    </div>
+
+                    <div id="conteudo5" class="content">
+                        <p>
+                            Doar sangue é um ato de solidariedade que pode salvar vidas. Ao doar sangue, você ajuda a garantir que pessoas que precisam de transfusões possam receber o tratamento necessário. Isso é especialmente importante em emergências. Além disso, a doação de sangue é um ato gratuito que não exige nada em troca, exceto a satisfação de saber que você está fazendo a diferença na vida de outras pessoas. Doar sangue é um ato nobre e solidário que pode fazer a diferença para quem
+                            precisa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="src/js/infoScript.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>
