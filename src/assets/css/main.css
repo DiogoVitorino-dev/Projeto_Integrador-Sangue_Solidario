@@ -9,10 +9,15 @@ body {
     background-color: #f5f5f5;
 }
 
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
 @keyframes scrollAnimation {
     0% {
         transform: translateY(0);
-
     }
     50% {
         transform: translateY(-20px);
@@ -23,9 +28,64 @@ body {
 }
 
 @media screen and (min-width: 320px) {
+    /* PRELOAD */
+    .page-wrapper,
+    .preloader {
+        width: 100%;
+        height: 100vh;
+        display: table;
+        background-color: #f5f5f5;
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .preloader-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: -45px;
+    }
+
+    .preloader-inner img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 30px;
+        justify-content: center;
+    }
+
+    .preloader-inner p {
+        text-align: center;
+    }
+
+    /* OVERLAY */
+    .overlay {
+        width: 100%;
+        height: 100vh;
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        background-color: rgba(155, 0, 0, 0.6);
+    }
+
     /* HEADER */
     header > .container-fluid {
         position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         background-color: rgba(155, 0, 0, 0.5);
         backdrop-filter: blur(5px);
         box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
@@ -38,6 +98,60 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        z-index: 1000;
+    }
+
+    .navBar-mob {
+        width: 220px;
+        height: 100vh;
+        display: block;
+        position: fixed;
+        top: 0;
+        background-color: #9b0000;
+        z-index: 1100;
+        padding: 100px 30px 30px;
+        transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    .navBar-mob a {
+        width: 100%;
+        height: 60px;
+        display: block;
+        line-height: 60px;
+        color: #f5f5f5;
+        font-family: "Raleway", sans-serif;
+        text-decoration: none;
+    }
+
+    .btn-menu-mob {
+        background: transparent;
+        display: block;
+        color: #fff;
+        border: none;
+        position: fixed;
+        right: 50px;
+        top: 25px;
+        z-index: 1200;
+        cursor: pointer;
+    }
+
+    .btn-menu-mob:focus {
+        outline: none;
+    }
+
+    ion-icon {
+        height: 30px;
+        width: 30px;
+        color: #f5f5f5;
+        vertical-align: middle;
+    }
+
+    .menu-is-open {
+        right: 0;
+    }
+
+    .menu-is-close {
+        right: -240px;
     }
 
     .logo {
@@ -54,7 +168,7 @@ body {
         background-color: rgba(245, 245, 245, 0.3);
         backdrop-filter: blur(5px);
         border-radius: 7px;
-        display: flex;
+        display: none;
         align-items: center;
     }
 
@@ -77,7 +191,50 @@ body {
         transition: 1s;
     }
 
-    .btn-cadastro{
+    .btn-container {
+        display: none;
+    }
+
+    .btn-container-mob {
+        display: inline-block;
+    }
+
+    .btn-cadastro-mob,
+    .btn-login-mob {
+        margin-top: 20px;
+        border: none;
+        border-radius: 7px;
+    }
+
+    .btn-cadastro-mob a,
+    .btn-login-mob a {
+        height: 40px;
+        width: 120px;
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        color: #9b0000;
+        background-color: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        border-radius: 7px;
+    }
+
+    .btn-cadastro-mob a:hover,
+    .btn-login-mob a:hover {
+        background-color: #dadada;
+        transition: 0.3s;
+    }
+
+    .btn-cadastro-mob:active,
+    .btn-login-mob:active {
+        transform: scale(0.95);
+        transition: 0.3s;
+    }
+
+    .btn-cadastro {
         width: 110px;
         height: 40px;
         font-family: "Raleway", sans-serif;
@@ -134,6 +291,7 @@ body {
         transition: 0.3s;
     }
 
+    /* BANNER */
     .banner {
         height: 100vh;
         width: 100%;
@@ -160,7 +318,7 @@ body {
     .text-banner {
         font-family: "Rubik", sans-serif;
         font-weight: 300;
-        font-size: clamp(1em, 1em + 3vw, 1.15em);
+        font-size: clamp(0.5em, 1em + 3vw, 1.1em);
         margin-bottom: 30px;
     }
 
@@ -197,25 +355,48 @@ body {
     .scroll-Down > p {
         font-family: "Raleway", sans-serif;
         font-size: 15px;
-        margin-left: 5px;
+        padding-left: 5px;
     }
 
     /* SERVIÇOS */
-
-    #servicos {
+    #servicos .container-servc {
         margin: 150px 0 150px 0;
+        display: flex;
+        flex-direction: column;
     }
 
     .line {
         height: 3px;
-        width: 75%;
+        width: 100%;
         background-color: #9b0000;
         margin-bottom: 30px;
     }
 
+    .text-servico {
+        text-align: center;
+    }
+
+    .text-servico h3 {
+        padding-right: 0;
+    }
+
     .text-servico p {
-        padding-right: 190px;
+        padding-right: 0;
         font-weight: 400;
+        margin-bottom: 30px;
+    }
+
+    .cards-servico {
+        display: flex;
+        margin-top: 0px;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .box-cs1,
+    .box-cs2 {
+        display: flex;
+        justify-content: center;
     }
 
     .card {
@@ -236,14 +417,14 @@ body {
 
     .card h5 {
         font-family: "Raleway", sans-serif;
-        font-size: 16px;
+        font-size: 12px;
         font-weight: 600;
         margin: 5px 0 15px 0;
     }
 
     .card p {
         font-family: "Raleway", sans-serif;
-        font-size: 14px;
+        font-size: 11px;
     }
 
     .icon-card {
@@ -252,41 +433,42 @@ body {
     }
 
     /* VIDEO */
-
     .banner-video {
         background-image: url(../img/bg-video.svg);
         background-size: cover;
         background-repeat: no-repeat;
-        height: 500px;
+        height: 600px;
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative;
         margin-bottom: 150px;
     }
 
     .box-video-Info {
         display: flex;
+        flex-direction: column-reverse;
     }
 
     .box-video {
-        margin-right: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-right: 0;
     }
 
     .line-v {
-        height: 3px;
-        width: 300px;
-        background-color: #9b0000;
-        position: relative;
-        margin: 0 0 30px auto;
+        display: none;
     }
 
     .text-video {
-        width: 300px;
+        width: 100%;
         position: relative;
+        margin-left: 0;
+        text-align: center;
         margin-left: auto;
-        text-align: left;
+        margin-right: auto;
+        margin-bottom: 30px;
     }
 
     .box-video-Info > .text-video p {
@@ -321,18 +503,25 @@ body {
     }
 
     .box-svg-info {
-        height: 400px;
-        width: 100%;
-        display: flex;
-        margin-top: auto;
-        margin-bottom: auto;
-        padding-left: 50px;
+        display: none;
     }
 
     /* GALERIA */
 
     .galeria {
         margin-bottom: 150px;
+        display: none;
+    }
+
+    .galeria-mob {
+        display: block;
+        margin-bottom: 150px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .d-block {
+        width: 100%;
+        height: 400px;
     }
 
     .img-galeria {
@@ -348,6 +537,7 @@ body {
 
     .avaliacao {
         margin-bottom: 170px;
+        display: none;
     }
 
     .avaliacao > .container-fluid > .container {
@@ -410,6 +600,11 @@ body {
         justify-content: space-between;
     }
 
+    .box-logo img {
+        width: 25vw;
+        text-align: center;
+    }
+
     .box-logo-hemocentro {
         margin-bottom: 70px;
     }
@@ -420,7 +615,7 @@ body {
         background-image: url(../img/bg-contact.svg);
         background-size: cover;
         background-repeat: no-repeat;
-        height: 60vh;
+        height: 90vh;
         width: 100%;
         display: flex;
         align-items: center;
@@ -436,10 +631,7 @@ body {
     .bg-contato .container {
         display: flex;
         justify-content: space-around;
-    }
-
-    .box-contato {
-        margin-right: 50px;
+        flex-direction: column;
     }
 
     .box-info-contato {
@@ -447,6 +639,7 @@ body {
     }
 
     .box-form {
+        display: flex;
         margin-bottom: 10px;
     }
 
@@ -454,7 +647,7 @@ body {
     .box-form > textarea,
     .box-feedback > input {
         height: 30px;
-        width: 200px;
+        width: 100%;
         background: rgba(30, 30, 30, 0.5);
         border-radius: 3px;
         border: none;
@@ -492,6 +685,10 @@ body {
         cursor: pointer;
     }
 
+    .btn-contato:focus {
+        outline: none;
+    }
+
     .btn-contato:hover {
         background-color: #8a0000;
         transition: 0.3s;
@@ -500,6 +697,10 @@ body {
     .btn-contato:active {
         transform: scale(0.95);
         transition: 0.3s;
+    }
+
+    .box-detalhe {
+        margin-top: 50px;
     }
 
     .box-detalhe p:first-child {
@@ -530,8 +731,8 @@ body {
     }
 
     .box-feedback {
+        margin-top: 30px;
         display: flex;
-        margin-top: 119px;
     }
 
     .box-feedback > input {
@@ -551,13 +752,16 @@ body {
         cursor: pointer;
     }
 
+    .btn-feed:focus {
+        outline: none;
+    }
+
     .btn-feed:hover {
         background-color: #8a0000;
         transition: 0.3s;
     }
 
     /* FOOTER */
-
     .bg-footer {
         height: 200px;
         width: 100%;
@@ -567,6 +771,7 @@ body {
 
     .box-footer {
         display: flex;
+        justify-content: space-between;
     }
 
     .footer-sobre,
@@ -615,6 +820,7 @@ body {
 
     .seguir {
         margin-left: auto;
+        display: none;
     }
 
     .seguir h6 {
@@ -632,12 +838,180 @@ body {
     .seguir img:hover {
         transform: scale(1.1);
     }
+
+    .box-serguir-mob {
+        width: 100%;
+        height: 40px;
+        background-color: #9b0000;
+        display: flex;
+        justify-content: center;
+    }
+
+    .seguir-mob {
+        display: flex;
+        align-items: center;
+    }
 }
 @media screen and (min-width: 576px) {
+    .seguir {
+        margin-left: auto;
+        display: block;
+    }
+
+    /* SERVICOS */
+    .card h5 {
+        font-size: 16px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+
+    /* FOOTER */
+    .box-serguir-mob {
+        display: none;
+    }
 }
 @media screen and (min-width: 768px) {
 }
 @media screen and (min-width: 992px) {
+    /* NAVBAR */
+    .navBar-mob,
+    ion-icon {
+        display: none;
+    }
+
+    .nav-container {
+        height: 40px;
+        background-color: rgba(245, 245, 245, 0.3);
+        backdrop-filter: blur(5px);
+        border-radius: 7px;
+        display: flex;
+        align-items: center;
+    }
+
+    .btn-container {
+        display: block;
+    }
+
+    /* SERVIÇOS */
+    #servicos .container-servc {
+        margin: 150px 0 150px 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .line {
+        width: 50%;
+    }
+
+    .text-servico {
+        text-align: start;
+    }
+
+    .text-servico h3 {
+        padding-right: 10em;
+    }
+
+    .text-servico p {
+        padding-right: 10em;
+        font-weight: 400;
+    }
+
+    .box-cs1,
+    .box-cs2 {
+        justify-content: center;
+    }
+
+    /* VIDEO */
+    .banner-video {
+        height: 500px;
+    }
+
+    .box-video-Info {
+        flex-direction: row;
+    }
+
+    .box-video {
+        width: 60%;
+        justify-content: start;
+    }
+
+    .line-v {
+        height: 3px;
+        width: 100%;
+        background-color: #9b0000;
+        position: relative;
+        margin: 0 0 30px auto;
+        display: block;
+    }
+
+    .text-video {
+        width: 300px;
+        margin-left: auto;
+        margin-right: 0;
+        text-align: left;
+        justify-content: right;
+    }
+
+    /* INFORMÇOES */
+    .box-svg-info {
+        height: 400px;
+        width: 100%;
+        display: flex;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-left: 50px;
+    }
+
+    /* GALERIA */
+    .galeria {
+        display: block;
+    }
+
+    .galeria-mob {
+        display: none;
+    }
+
+    /* LOGOS HEMOCENTROS */
+
+    .line-logos {
+        height: 3px;
+        width: 100%;
+        margin-bottom: 70px;
+    }
+
+    .box-logo-hemocentro {
+        margin-bottom: 70px;
+    }
+
+    .box-logo img {
+        width: 20vw;
+        text-align: center;
+    }
+
+    /* CONTATO */
+    .bg-contato {
+        height: 60vh;
+        width: 100%;
+    }
+
+    .bg-contato .container {
+        flex-direction: row;
+    }
+
+    .box-feedback {
+        margin-top: 119px;
+    }
+
+    .box-detalhe {
+        margin-top: 0;
+    }
+
+    /* AVALIACAO */
+    .avaliacao {
+        display: block;
+    }
 }
 @media screen and (min-width: 1200px) {
 }
@@ -687,4 +1061,27 @@ body {
 
 .bg-color-light {
     background-color: #f5f5f5;
+}
+
+/* === CLASSES DE COMPORTAMENTO === */
+.open {
+    display: block;
+}
+
+/* PRELOAD */
+.fade-out {
+    animation: fadeOut 1s forwards ease-out;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    background-color: #f5f5f5;
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 200px;
+    width: 12px;
+    background-color: #9b0000;
 }
