@@ -1,6 +1,9 @@
 import { getAuth } from "firebase/auth";
 
-export default function LogoutUser() {
+export default async function LogoutUser(firebaseReference) {
     // Deslogar o usuário
-    getAuth().signOut()
+    if (firebaseReference)
+        return getAuth(firebaseReference).signOut()
+
+    return false
 }
