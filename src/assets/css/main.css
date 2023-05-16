@@ -88,20 +88,28 @@ body {
     .perfil-container-mob {
         position: relative;
         top: -320px;
-        display: block;
         cursor: pointer;
     }
 
     .perfil-container-mob button{
         color: #f5f5f5;
     }
-
+    
     .dropdown-item{
-        color: black;
+        color: #f5f5f5;
     }
 
-    .perfil-container button, .perfil-container-mob button {
+    .perfil-container-mob button {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: transparent;
+        border-color: transparent;
+        max-width: 250px;
+    }
+
+    .perfil-container button {
+        display: none;
         align-items: center;
         justify-content: space-between;
         background-color: transparent;
@@ -1075,6 +1083,10 @@ body {
 
     .perfil-container-mob {
         display: none;
+    }
+
+    .perfil-container button {
+        display: flex;
     }
 }
 @media screen and (min-width: 1200px) {

@@ -4,13 +4,23 @@ ul {
 
 /* PERFIL */
 .perfil-container {
+    display: none;
+}
+
+.perfil-container {
     cursor: pointer;
 }
+
+.perfil-container:active{
+    transform: scale(0.95);
+}
+
+/* PERFIL  */
 
 .perfil-container-mob {
     position: relative;
     top: -320px;
-    display: block;
+
     cursor: pointer;
 }
 
@@ -51,6 +61,7 @@ ul {
 .perfil-container button img {
     margin: 0 5px;
 }
+
 
 #scheduling{
     padding-top: 80px;
