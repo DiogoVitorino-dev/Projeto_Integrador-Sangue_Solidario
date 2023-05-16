@@ -1,11 +1,10 @@
-import { getAuth } from "firebase/auth";
+import LogoutUser from "../../autheticantion/logoutUser"
 import UserDatabaseDao from "../../database/dao/userDatabaseDao"
 import LoginUserWithEmail from "../../autheticantion/loginUser";
 import InitializeFirebase from "../../firebase/initFirebase";
 
 function sendToDatabase(date, location, time, currentDateTime) {
     if (date && location && time && currentDateTime) {
-        let user = JSON.parse(sessionStorage.getItem('user'))
         const {firebaseReference} = InitializeFirebase()
 
         LoginUserWithEmail(user.email, sessionStorage.getItem('pass'))
@@ -89,5 +88,36 @@ function verifyInformation() {
     } else createAlert("Selecione uma data")
 }
 
+function getLogoutButton() {
+    const btns = document.getElementsByClassName("dropdown-item-logout")
+
+    for (let index = 0; index < btns.length; index++) {
+        btns[index].addEventListener("click", onClickLogout)
+    }
+}
+
+function getFirstName() {
+    if (user) return user.fullName.split(/\s/)[0]
+    return "Doador"
+}
+
+function onClickLogout() {
+    sessionStorage.setItem('user','')
+    sessionStorage.setItem('pass','')
+    LogoutUser().then(() => {
+        window.location.href = "index.html"
+    })
+
+}
+
+
 const btn = document.getElementById('doneButton')
+const user = JSON.parse(sessionStorage.getItem("user"))
+
 btn.addEventListener('click',verifyInformation)
+document.getElementById("nomeTextView").innerHTML = "Olá, " + getFirstName()
+getLogoutButton()
+
+
+
+

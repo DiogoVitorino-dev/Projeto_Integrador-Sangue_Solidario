@@ -40,7 +40,7 @@ function generateListDaysOfMonth(month,year) {
 
 function onClickDayOfMonthItem() {
     replaceDateSelected()
-    this.className = String(this.className).replace("btn","btn-selected")
+    this.className = String(this.className).replace("btn-calendar","btn-selected")
     global.dateSelected = String(this.value)
 }
 
@@ -48,7 +48,7 @@ function replaceDateSelected() {
     let itemSelected = document.getElementsByClassName("btn-selected")[0]
 
     if(itemSelected) {
-        let classes = String(itemSelected.className).replace("btn-selected","btn")
+        let classes = String(itemSelected.className).replace("btn-selected","btn-calendar")
         itemSelected.className =  classes;
     }
 }
@@ -67,7 +67,7 @@ function createDayOfMonthItems(daysOfMonthList=[]){
 
             btn.innerHTML = element.day
             btn.value = element.fullDate
-            btn.className="btn"
+            btn.className="btn-calendar"
             btn.addEventListener("click",onClickDayOfMonthItem)
 
             let container = createDayOfMonthContainer()
